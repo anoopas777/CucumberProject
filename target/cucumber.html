@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"15.0.2+7-27"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1620579014","nanos":55881000}}},{"source":{"uri":"file:///C:/Users/Anoop/SeleniumWithCucucumber-master-20210509T051754Z-001/SeleniumWithCucucumber-master/src/test/java/features/Login.feature","data":"Feature: LoginFeature\n  This feature deals with the login functionality of the application\n\n  Scenario: Login with correct username and password\n    Given I navigate to the login page\n    And I enter the following for Login\n      | username | password      |\n      | admin    | adminpassword |\n    And I click login button\n    Then I should see the userform page\n\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/Anoop/SeleniumWithCucucumber-master-20210509T051754Z-001/SeleniumWithCucucumber-master/src/test/java/features/Login.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"LoginFeature","description":"  This feature deals with the login functionality of the application","children":[{"scenario":{"location":{"line":4,"column":3},"keyword":"Scenario","name":"Login with correct username and password","steps":[{"location":{"line":5,"column":5},"keyword":"Given ","text":"I navigate to the login page","id":"9ae05a09-8698-47ab-a493-c2690af5f498"},{"location":{"line":6,"column":5},"keyword":"And ","text":"I enter the following for Login","dataTable":{"location":{"line":7,"column":7},"rows":[{"location":{"line":7,"column":7},"cells":[{"location":{"line":7,"column":9},"value":"username"},{"location":{"line":7,"column":20},"value":"password"}],"id":"d510e29e-8a33-477b-a4b7-d5d1fee08641"},{"location":{"line":8,"column":7},"cells":[{"location":{"line":8,"column":9},"value":"admin"},{"location":{"line":8,"column":20},"value":"adminpassword"}],"id":"30a43d5d-3185-43eb-98fa-f5773cb5ec1e"}]},"id":"9ae11ffb-599b-46e4-afda-6a39329209f4"},{"location":{"line":9,"column":5},"keyword":"And ","text":"I click login button","id":"e6b79f0e-21ab-479f-9f89-956829ba8e12"},{"location":{"line":10,"column":5},"keyword":"Then ","text":"I should see the userform page","id":"ed19cf42-2478-4616-bbb0-cf31f382e79d"}],"id":"eca88b9d-89c1-4d1c-8d19-12553cdaebaa"}}]}}},{"pickle":{"id":"ea413a06-87a8-415c-a62b-86577b862c11","uri":"file:///C:/Users/Anoop/SeleniumWithCucucumber-master-20210509T051754Z-001/SeleniumWithCucucumber-master/src/test/java/features/Login.feature","name":"Login with correct username and password","language":"en","steps":[{"text":"I navigate to the login page","id":"9c6a5a22-a930-4297-b7ce-9b9c5cf1a76e","astNodeIds":["9ae05a09-8698-47ab-a493-c2690af5f498"]},{"text":"I enter the following for Login","argument":{"dataTable":{"rows":[{"cells":[{"value":"username"},{"value":"password"}]},{"cells":[{"value":"admin"},{"value":"adminpassword"}]}]}},"id":"923596df-2edb-49cf-a4a6-f4beac490910","astNodeIds":["9ae11ffb-599b-46e4-afda-6a39329209f4"]},{"text":"I click login button","id":"d516b12f-61cf-4d68-8b60-64bc6a70dbb7","astNodeIds":["e6b79f0e-21ab-479f-9f89-956829ba8e12"]},{"text":"I should see the userform page","id":"0a8a8d7c-0ad8-4888-9f51-ffcd64eb8445","astNodeIds":["ed19cf42-2478-4616-bbb0-cf31f382e79d"]}],"astNodeIds":["eca88b9d-89c1-4d1c-8d19-12553cdaebaa"]}},{"source":{"uri":"file:///C:/Users/Anoop/SeleniumWithCucucumber-master-20210509T051754Z-001/SeleniumWithCucucumber-master/src/test/java/features/Login2.feature","data":"Feature: LoginFeature\n  This feature deals with the login functionality of the application\n\n\n  Scenario: Login with correct username and password to fail\n    Given I navigate to the login page\n    And I enter the following for Login\n      | username | password      |\n      | admin    | adminpassword |\n    And I click login button\n    Then I should see the userform page wrongly","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/Anoop/SeleniumWithCucucumber-master-20210509T051754Z-001/SeleniumWithCucucumber-master/src/test/java/features/Login2.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"LoginFeature","description":"  This feature deals with the login functionality of the application","children":[{"scenario":{"location":{"line":5,"column":3},"keyword":"Scenario","name":"Login with correct username and password to fail","steps":[{"location":{"line":6,"column":5},"keyword":"Given ","text":"I navigate to the login page","id":"7be04561-9480-481a-a911-153cc5348033"},{"location":{"line":7,"column":5},"keyword":"And ","text":"I enter the following for Login","dataTable":{"location":{"line":8,"column":7},"rows":[{"location":{"line":8,"column":7},"cells":[{"location":{"line":8,"column":9},"value":"username"},{"location":{"line":8,"column":20},"value":"password"}],"id":"468a4e97-d3ff-4209-bcf5-5968687c5c68"},{"location":{"line":9,"column":7},"cells":[{"location":{"line":9,"column":9},"value":"admin"},{"location":{"line":9,"column":20},"value":"adminpassword"}],"id":"6c881051-d5a8-45ad-ae10-684113a875a1"}]},"id":"00bdc324-3dbe-43fd-8f5f-7292b43c9ac4"},{"location":{"line":10,"column":5},"keyword":"And ","text":"I click login button","id":"7ac1aa35-6a47-4e87-85c2-63a182a37a96"},{"location":{"line":11,"column":5},"keyword":"Then ","text":"I should see the userform page wrongly","id":"4e512b3c-c96d-4101-9fb1-a9c3b9c0ec4a"}],"id":"dd262c52-8b34-4d13-bb0e-0ad854393b2c"}}]}}},{"pickle":{"id":"074717e3-6f80-496a-a95f-4ba901f0d6c7","uri":"file:///C:/Users/Anoop/SeleniumWithCucucumber-master-20210509T051754Z-001/SeleniumWithCucucumber-master/src/test/java/features/Login2.feature","name":"Login with correct username and password to fail","language":"en","steps":[{"text":"I navigate to the login page","id":"c52475f2-e749-4adc-bba7-64a62245101c","astNodeIds":["7be04561-9480-481a-a911-153cc5348033"]},{"text":"I enter the following for Login","argument":{"dataTable":{"rows":[{"cells":[{"value":"username"},{"value":"password"}]},{"cells":[{"value":"admin"},{"value":"adminpassword"}]}]}},"id":"d7fcbb92-4ff6-462c-a125-878fdb6327da","astNodeIds":["00bdc324-3dbe-43fd-8f5f-7292b43c9ac4"]},{"text":"I click login button","id":"21ca229c-3f0a-4a81-b649-2a76d81e6d92","astNodeIds":["7ac1aa35-6a47-4e87-85c2-63a182a37a96"]},{"text":"I should see the userform page wrongly","id":"82806728-1bc8-4170-8529-2e265964b8b4","astNodeIds":["4e512b3c-c96d-4101-9fb1-a9c3b9c0ec4a"]}],"astNodeIds":["dd262c52-8b34-4d13-bb0e-0ad854393b2c"]}},{"testCase":{"id":"d29daf3d-b6f7-40ad-8900-5fc16541fbef","pickleId":"ea413a06-87a8-415c-a62b-86577b862c11","testSteps":[{"id":"1d31caf4-a445-46c0-8d14-0b96807caaca","hookId":"f51aee13-30bc-47a4-9cdc-eeb3f671d52d"},{"id":"278d77cf-786a-4876-8e16-b520231a6a35","hookId":"7196106f-a6a1-4113-a2d6-18ec93656ce5"},{"id":"f7b48f1f-8d90-4745-8fe2-f91fdb0611df","pickleStepId":"9c6a5a22-a930-4297-b7ce-9b9c5cf1a76e","stepDefinitionIds":["3e9fb450-db73-4510-875c-9b6f758a44ac"],"stepMatchArgumentsLists":[{}]},{"id":"7f5bd0b2-3ad6-4782-a0d5-67385feca5c6","hookId":"945c69b9-7f0f-442a-bbf0-022d6e7d9254"},{"id":"4e31186d-89fe-405d-bc23-7356d1b8196e","hookId":"7196106f-a6a1-4113-a2d6-18ec93656ce5"},{"id":"3c7a421e-fecd-4f5c-868d-c78a7f71fe01","pickleStepId":"923596df-2edb-49cf-a4a6-f4beac490910","stepDefinitionIds":["7418d53e-c726-4f58-9b85-8c3fe0b496a3"],"stepMatchArgumentsLists":[{}]},{"id":"41fc8ff3-731e-4c63-b1e3-e4e18037d0cd","hookId":"945c69b9-7f0f-442a-bbf0-022d6e7d9254"},{"id":"87d4802f-4837-4f27-a98c-e59177a705b0","hookId":"7196106f-a6a1-4113-a2d6-18ec93656ce5"},{"id":"f72c9e43-3120-4c78-b2ae-7a5830f400da","pickleStepId":"d516b12f-61cf-4d68-8b60-64bc6a70dbb7","stepDefinitionIds":["39029b97-fd8a-4aa0-98de-abd88c5d5c1b"],"stepMatchArgumentsLists":[{}]},{"id":"42937ac9-dc67-496f-9e21-77f931797eef","hookId":"945c69b9-7f0f-442a-bbf0-022d6e7d9254"},{"id":"28c0f105-1b3c-4a67-ba5e-f1950c2bf97c","hookId":"7196106f-a6a1-4113-a2d6-18ec93656ce5"},{"id":"bf028fde-ff6b-49e2-87e1-709b1a7b30f4","pickleStepId":"0a8a8d7c-0ad8-4888-9f51-ffcd64eb8445","stepDefinitionIds":["e444da17-c00c-486e-b6b3-6b5407c9000a"],"stepMatchArgumentsLists":[{}]},{"id":"0b997156-c24b-44d6-a9b3-a7f3c0d008f4","hookId":"945c69b9-7f0f-442a-bbf0-022d6e7d9254"},{"id":"6e712e57-a9af-4321-aa1f-f899612b667b","hookId":"75e10d32-8a46-4363-95aa-5f51d6b024fe"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1620579014","nanos":509264300},"testCaseId":"d29daf3d-b6f7-40ad-8900-5fc16541fbef","id":"97e99e90-c3c0-433b-a698-2c5a97fd371c"}},{"testStepStarted":{"timestamp":{"seconds":"1620579014","nanos":513264300},"testStepId":"1d31caf4-a445-46c0-8d14-0b96807caaca","testCaseStartedId":"97e99e90-c3c0-433b-a698-2c5a97fd371c"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"seconds":"2","nanos":149031100}},"timestamp":{"seconds":"1620579016","nanos":662295400},"testStepId":"1d31caf4-a445-46c0-8d14-0b96807caaca","testCaseStartedId":"97e99e90-c3c0-433b-a698-2c5a97fd371c"}},{"testStepStarted":{"timestamp":{"seconds":"1620579016","nanos":673539300},"testStepId":"278d77cf-786a-4876-8e16-b520231a6a35","testCaseStartedId":"97e99e90-c3c0-433b-a698-2c5a97fd371c"}},{"testStepFinished":{"testStepResult":{"status":"PASSED","duration":{"nanos":
